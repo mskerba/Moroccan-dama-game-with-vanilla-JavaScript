@@ -5,16 +5,17 @@ body {
 }
 
 #gameboard {
-    width: 320px;
-    height: 320px;
+    width: 50%;
+    /* height: 320px; */
     background-color: rgb(168, 77, 77);
     display: flex;
     flex-wrap: wrap;
 }
 
 .square{
-    height: 40px;
-    width: 40px;
+    /* height: 40px; */
+    width: 12.5%;
+    padding-top: 12.5%;
     position: relative;
     /* align-items: center; */
 
@@ -69,28 +70,25 @@ body {
 }
 
 .square svg{
-    height: 30px;
-    width: 30px;
-    margin: 5px;
+    height: 80%;
+    width: 80%;
+    margin: 5%;
     position: relative;
     z-index: -9;
 }
 
 div#whiteDaim {
-    transform: translateX(15%);
+    transform: translateX(25%);
 }
 
 div#blackDaim {
-    transform: translateX(15%);
+    transform: translateX(20%);
 }
 
 path{
     position: relative;
-    z-index: 10;
-    
+    z-index: 10; 
 }
-
-
 
 .piece{
     position: relative;
@@ -109,4 +107,11 @@ path{
 
 .brown{
     background-color: rgb(169, 43, 43);
+}
+
+@media(max-width:800px)
+{
+    #gameboard {
+        width: 80%;
+    }
 }

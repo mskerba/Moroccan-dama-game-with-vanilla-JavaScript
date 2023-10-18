@@ -29,6 +29,8 @@ function createBoard() {
         square.innerHTML = startPieces
         square.firstChild?.setAttribute("draggable", "true")
         square.setAttribute("square-id", i)
+        if(square.firstChild)
+            square.setAttribute("style", "padding-top: 0px")
         square.classList.add('square')
         square.classList.add((((i % 16 >= 8) ? i - 1 : i) % 2) ? 'beige' : 'brown')
         gameBoard.append(square)
@@ -37,7 +39,6 @@ function createBoard() {
 }
 
 createBoard()
-
 
 
 const allSquares = document.querySelectorAll("#gameboard .square")
@@ -197,11 +198,15 @@ function dragDrop(event) {
     {
         if (!mvDaim())
             return ;
+        let isplein = document.querySelectorAll('#gameboard div.square')
+        isplein[toPositionId].setAttribute("style", "padding-top: 0px")
         event.target.append(draggedElement)
         changePlayer()
     }
     else if (isValid())
     {
+        let isplein = document.querySelectorAll('#gameboard div.square')
+        isplein[toPositionId].setAttribute("style", "padding-top: 0px")
         event.target.append(draggedElement)
         isDaim()
         changePlayer()
